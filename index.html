@@ -18,6 +18,21 @@
             background-image: radial-gradient(circle at 30% 70%, #1e3a8a, transparent 40%),
                               radial-gradient(circle at 80% 20%, #4f46e5, transparent 40%);
         }
+        /* Custom scrollbar for webkit browsers */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #1f2937; /* gray-800 */
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #4f46e5; /* indigo-600 */
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4338ca; /* indigo-700 */
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200">
@@ -31,8 +46,9 @@
                 </div>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-gray-300 hover:text-white transition-colors duration-300">About</a>
-                    <a href="#concepts" class="text-gray-300 hover:text-white transition-colors duration-300">Core Concepts</a>
+                    <a href="#concepts" class="text-gray-300 hover:text-white transition-colors duration-300">Concepts</a>
                     <a href="#resources" class="text-gray-300 hover:text-white transition-colors duration-300">Resources</a>
+                    <a href="#casestudies" class="text-gray-300 hover:text-white transition-colors duration-300">Case Studies</a>
                     <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-300">Contact</a>
                 </nav>
                 <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
@@ -45,6 +61,7 @@
             <a href="#about" class="block py-2 text-gray-300 hover:text-white">About</a>
             <a href="#concepts" class="block py-2 text-gray-300 hover:text-white">Core Concepts</a>
             <a href="#resources" class="block py-2 text-gray-300 hover:text-white">Resources</a>
+            <a href="#casestudies" class="block py-2 text-gray-300 hover:text-white">Case Studies</a>
             <a href="#contact" class="block py-2 text-gray-300 hover:text-white">Contact</a>
         </div>
     </header>
@@ -109,47 +126,118 @@
                     <h2 class="text-3xl font-bold text-white">Key Resources</h2>
                     <p class="text-gray-400 mt-2">Foundational papers and essential tools.</p>
                 </div>
-                <div class="max-w-4xl mx-auto">
-                    <!-- Resource Item 1 -->
-                    <div class="bg-gray-900 p-6 rounded-lg mb-4 flex items-start space-x-4">
-                         <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        <div>
-                            <h3 class="text-lg font-semibold text-white">Distilling the Knowledge in a Neural Network</h3>
-                            <p class="text-gray-400 text-sm">G. Hinton, O. Vinyals, J. Dean (2015)</p>
-                            <a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                <!-- Scrollable container for resources -->
+                <div class="max-w-4xl mx-auto bg-gray-900 rounded-lg p-2 md:p-4">
+                    <div class="max-h-[450px] overflow-y-auto custom-scrollbar pr-4">
+                        <!-- Resource Item 1 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Distilling the Knowledge in a Neural Network</h3>
+                                <p class="text-gray-400 text-sm">G. Hinton, O. Vinyals, J. Dean (2015)</p>
+                                <a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Resource Item 2 -->
-                    <div class="bg-gray-900 p-6 rounded-lg mb-4 flex items-start space-x-4">
-                        <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                        <div>
-                            <h3 class="text-lg font-semibold text-white">Relational Knowledge Distillation</h3>
-                            <p class="text-gray-400 text-sm">Wonpyo Park et al. (2019)</p>
-                            <a href="https://arxiv.org/abs/1904.05068" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                        <!-- Resource Item 2 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">DistilBERT, a distilled version of BERT</h3>
+                                <p class="text-gray-400 text-sm">V. Sanh, L. Debut, J. Chaumond, T. Wolf (2019)</p>
+                                <a href="https://arxiv.org/abs/1910.01108" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Resource Item 3 -->
-                    <div class="bg-gray-900 p-6 rounded-lg flex items-start space-x-4">
-                        <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        <div>
-                            <h3 class="text-lg font-semibold text-white">Hugging Face Transformers</h3>
-                            <p class="text-gray-400 text-sm">A popular library that includes tools and examples for knowledge distillation with state-of-the-art models.</p>
-                            <a href="https://huggingface.co/docs/transformers/main/en/tasks/knowledge_distillation" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Explore Docs &rarr;</a>
+                        <!-- Resource Item 3 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">A Survey of Knowledge Distillation</h3>
+                                <p class="text-gray-400 text-sm">J. Gou et al. (2021)</p>
+                                <a href="https://arxiv.org/abs/2006.05525" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Survey &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Resource Item 4 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Relational Knowledge Distillation</h3>
+                                <p class="text-gray-400 text-sm">W. Park et al. (2019)</p>
+                                <a href="https://arxiv.org/abs/1904.05068" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                            </div>
+                        </div>
+                        <!-- Resource Item 5 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Hugging Face Transformers</h3>
+                                <p class="text-gray-400 text-sm">A popular library that includes tools and examples for knowledge distillation with state-of-the-art models.</p>
+                                <a href="https://huggingface.co/docs/transformers/tasks/knowledge_distillation_for_image_classification" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Explore Docs &rarr;</a>
+                            </div>
+                        </div>
+                         <!-- Resource Item 6 -->
+                        <div class="bg-gray-800 p-6 rounded-lg mb-4 flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">TextBrewer</h3>
+                                <p class="text-gray-400 text-sm">A PyTorch-based toolkit for knowledge distillation in NLP. A practical tool for implementation.</p>
+                                <a href="https://github.com/airaria/TextBrewer" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                         <!-- Resource Item 7 (REPLACED AND CORRECTED) -->
+                        <div class="bg-gray-800 p-6 rounded-lg flex items-start space-x-4">
+                            <svg class="w-6 h-6 text-indigo-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">TinyBERT: Distilling BERT for Natural Language Understanding</h3>
+                                <p class="text-gray-400 text-sm">X. Jiao, Y. Yin, L. Shang, et al. (2019)</p>
+                                <a href="https://arxiv.org/abs/1909.10351" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-2">Read Paper &rarr;</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         
+        <!-- Case Studies Section -->
+        <section id="casestudies" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-white">Model Distillation in Action</h2>
+                    <p class="text-gray-400 mt-2">Real-world examples of how distillation creates efficient, powerful models.</p>
+                </div>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Case Study 1 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                        <h3 class="text-xl font-semibold text-white mb-3">Hugging Face's DistilBERT</h3>
+                        <p class="text-gray-400 flex-grow">A landmark case in NLP. The massive BERT model was distilled into DistilBERT, which is 40% smaller and 60% faster, while retaining over 97% of BERT's language understanding capabilities. This made high-performance NLP accessible for production environments.</p>
+                        <a href="https://huggingface.co/distilbert-base-uncased" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-4 self-start">Learn More &rarr;</a>
+                    </div>
+                    <!-- Case Study 2 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                        <h3 class="text-xl font-semibold text-white mb-3">Google's On-Device AI</h3>
+                        <p class="text-gray-400 flex-grow">Many features in Android, such as live captions and Reading Mode, rely on powerful models. Google uses distillation to shrink these models to run directly on your phone with low latency and without needing an internet connection, preserving privacy and speed.</p>
+                         <a href="https://research.google/blog/on-device-content-distillation-with-graph-neural-networks/" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-4 self-start">Read Google's Blog &rarr;</a>
+                    </div>
+                    <!-- Case Study 3 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col">
+                        <h3 class="text-xl font-semibold text-white mb-3">Edge Computing & Vision</h3>
+                        <p class="text-gray-400 flex-grow">In fields like autonomous driving and smart cameras, complex computer vision models must run on small, power-efficient "edge" devices. Distillation is a key technique used to compress large, accurate vision models into smaller forms for real-time analysis.</p>
+                        <a href="https://www.researchgate.net/publication/350293589_Knowledge_Distillation_A_Survey" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-500 transition-colors duration-300 inline-block mt-4 self-start">Read Survey &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
-        <section id="contact" class="py-20">
+        <section id="contact" class="py-20 bg-gray-800">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl font-bold text-white">Get In Touch</h2>
-                    <p class="text-gray-400 mt-2">Have a question or a resource to suggest? Let me know.</p>
+                    <p class="text-gray-400 mt-2">Have a question or a resource to suggest? We'd love to hear from you.</p>
+                    <p class="text-gray-300 mt-4 max-w-2xl mx-auto">Our team of experts can help with your model distillation needs, from consultation and strategy to implementing bespoke student models for your specific use case. Reach out to see how we can help.</p>
                 </div>
                 <div class="max-w-xl mx-auto">
-                    <form id="contact-form" class="bg-gray-800 p-8 rounded-lg shadow-lg">
+                    <!-- Netlify form handling enabled with data-netlify="true" -->
+                    <form name="contact" method="POST" data-netlify="true" class="bg-gray-900 p-8 rounded-lg shadow-lg">
                         <div class="mb-6">
                             <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name</label>
                             <input type="text" id="name" name="name" class="w-full bg-gray-700 text-white rounded-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Name" required>
@@ -168,7 +256,6 @@
                             </button>
                         </div>
                     </form>
-                    <div id="form-status" class="text-center mt-4"></div>
                 </div>
             </div>
         </section>
@@ -176,7 +263,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 border-t border-gray-700">
+    <footer class="bg-gray-900 border-t border-gray-700">
         <div class="container mx-auto px-6 py-8 text-center text-gray-400">
             <p>&copy; <span id="year"></span> MLDistill.com. All Rights Reserved.</p>
         </div>
@@ -193,38 +280,21 @@
         // Set current year in footer
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Smooth scroll for nav links
+        // Smooth scroll for nav links and close mobile menu
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-                // Close mobile menu on link click
+                
+                // Close mobile menu if open
                 if (!mobileMenu.classList.contains('hidden')) {
                     mobileMenu.classList.add('hidden');
                 }
+                
+                // Scroll to section
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        });
-        
-        // Handle form submission
-        const contactForm = document.getElementById('contact-form');
-        const formStatus = document.getElementById('form-status');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // This is a front-end only example.
-            // For a real website, you would send this data to a backend server or a serverless function.
-            // For example, using services like Netlify Forms, Formspree, or your own API endpoint.
-            
-            formStatus.textContent = "Thank you for your message! (Form submission is for demo purposes only)";
-            formStatus.className = 'text-green-400';
-            contactForm.reset();
-
-            setTimeout(() => {
-                formStatus.textContent = "";
-            }, 5000);
         });
     </script>
 </body>

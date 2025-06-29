@@ -56,32 +56,31 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="#" class="flex items-center space-x-3">
-                    <!-- NEW, MORE PROMINENT SVG Logo -->
-                    <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- NEW, MORE PROMINENT FUNNEL SVG Logo -->
+                    <svg width="48" height="48" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="prominent-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
+                            <filter id="funnel-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
                                 <feMerge>
                                     <feMergeNode in="coloredBlur"/>
                                     <feMergeNode in="SourceGraphic"/>
                                 </feMerge>
                             </filter>
                         </defs>
-                        <!-- Bolder Brain/Network (teacher) -->
-                        <path d="M40 80 C 20 100, 20 140, 40 160" stroke="#64748b" stroke-width="8" fill="none"/>
-                        <path d="M80 50 C 60 70, 60 110, 80 130" stroke="#64748b" stroke-width="8" fill="none"/>
-                        <path d="M60 40 C 40 60, 40 100, 60 120" stroke="#64748b" stroke-width="8" fill="none"/>
-                        <circle cx="50" cy="50" r="12" fill="#64748b" fill-opacity="0.7"/>
-                        <circle cx="30" cy="90" r="10" fill="#64748b" fill-opacity="0.7"/>
-                        <circle cx="70" cy="140" r="14" fill="#64748b" fill-opacity="0.7"/>
-
-                        <!-- Solid, glowing Transfer Arrow -->
-                        <path d="M90 100 L125 100 M110 85 L125 100 L110 115" stroke="#06b6d4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
-                            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
-                        </path>
-
-                        <!-- Prominent Chip (student) -->
-                        <rect x="135" y="75" width="50" height="50" rx="8" fill="#06b6d4" filter="url(#prominent-glow)"/>
+                        <!-- Complex data points at top -->
+                        <circle cx="80" cy="30" r="7" fill="#06b6d4" fill-opacity="0.4"/>
+                        <circle cx="100" cy="20" r="9" fill="#06b6d4" fill-opacity="0.6"/>
+                        <circle cx="120" cy="30" r="7" fill="#06b6d4" fill-opacity="0.4"/>
+                        <circle cx="110" cy="48" r="5" fill="#06b6d4" fill-opacity="0.3"/>
+                        <circle cx="90" cy="48" r="5" fill="#06b6d4" fill-opacity="0.3"/>
+                        <circle cx="130" cy="55" r="4" fill="#06b6d4" fill-opacity="0.2"/>
+                        <circle cx="70" cy="55" r="4" fill="#06b6d4" fill-opacity="0.2"/>
+                        <!-- Funnel Shape -->
+                        <path d="M65 70 L90 145 L110 145 L135 70 Z" stroke="#64748b" stroke-width="6" fill="#0f172a" fill-opacity="0.5"/>
+                        <!-- Distilled knowledge at bottom -->
+                        <circle cx="100" cy="175" r="15" fill="#06b6d4" filter="url(#funnel-glow)">
+                            <animate attributeName="r" values="14;16;14" dur="2s" repeatCount="indefinite" />
+                        </circle>
                     </svg>
                     <span class="text-2xl font-bold text-white">ML<span class="text-cyan-400">Distill</span>.com</span>
                 </a>

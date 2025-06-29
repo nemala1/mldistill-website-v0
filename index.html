@@ -55,9 +55,37 @@
     <header class="bg-slate-950/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 border-b border-slate-800">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-white">
-                    <a href="#">ML<span class="text-cyan-400">Distill</span>.com</a>
-                </div>
+                <a href="#" class="flex items-center space-x-3">
+                    <!-- NEW Modern Funnel SVG Logo -->
+                    <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <filter id="brain-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                                <feMerge>
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Digital bits (input) -->
+                        <rect x="70" y="25" width="8" height="8" fill="#06b6d4" fill-opacity="0.5"/>
+                        <rect x="120" y="30" width="10" height="10" fill="#06b6d4" fill-opacity="0.3"/>
+                        <rect x="95" y="15" width="12" height="12" fill="#06b6d4" fill-opacity="0.7"/>
+                        <rect x="105" y="45" width="6" height="6" fill="#06b6d4" fill-opacity="0.2"/>
+                        <rect x="85" y="50" width="7" height="7" fill="#06b6d4" fill-opacity="0.4"/>
+                        <!-- Wireframe funnel -->
+                        <path d="M70 65 L95 135" stroke="#64748b" stroke-width="3"/>
+                        <path d="M130 65 L105 135" stroke="#64748b" stroke-width="3"/>
+                        <path d="M55 75 L145 75" stroke="#64748b" stroke-width="2" stroke-opacity="0.5"/>
+                        <path d="M75 105 L125 105" stroke="#64748b" stroke-width="2" stroke-opacity="0.5"/>
+                        <!-- Distilled brain (output) -->
+                        <g filter="url(#brain-glow)">
+                            <path d="M100 150 C90 150 90 160 100 160 C110 160 110 170 100 170 C90 170 90 180 100 180" stroke="#06b6d4" stroke-width="6" stroke-linecap="round" fill="none"/>
+                            <path d="M100 150 C110 150 110 160 100 160" stroke="#06b6d4" stroke-width="6" stroke-linecap="round" fill="none"/>
+                        </g>
+                    </svg>
+                    <span class="text-2xl font-bold text-white">ML<span class="text-cyan-400">Distill</span>.com</span>
+                </a>
                 <nav class="hidden md:flex space-x-8">
                     <a href="#about" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">About</a>
                     <a href="#concepts" class="text-slate-300 hover:text-cyan-400 transition-colors duration-300">Concepts</a>

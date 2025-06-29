@@ -236,8 +236,8 @@
                     <p class="text-gray-300 mt-4 max-w-2xl mx-auto">Our team of experts can help with your model distillation needs, from consultation and strategy to implementing bespoke student models for your specific use case. Reach out to see how we can help.</p>
                 </div>
                 <div class="max-w-xl mx-auto">
-                    <!-- Netlify form handling with standard action -->
-                    <form name="contact" method="POST" data-netlify="true" class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <!-- Netlify form handling with a custom success page -->
+                    <form name="contact" method="POST" data-netlify="true" action="/thank-you.html" data-netlify-honeypot="bot-field" class="bg-gray-900 p-8 rounded-lg shadow-lg">
                         <input type="hidden" name="form-name" value="contact" />
                         <!-- Honeypot field for spam prevention -->
                         <p class="hidden"><label>Don’t fill this out if you’re human: <input name="bot-field" /></label></p>

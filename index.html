@@ -56,37 +56,32 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="#" class="flex items-center space-x-3">
-                    <!-- NEW Brain-to-Chip SVG Logo -->
-                    <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- NEW, MORE PROMINENT SVG Logo -->
+                    <svg width="44" height="44" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
-                            <filter id="chip-glow" x="-50%" y="-50%" width="200%" height="200%">
-                                <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+                            <filter id="prominent-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="15" result="coloredBlur"/>
                                 <feMerge>
                                     <feMergeNode in="coloredBlur"/>
                                     <feMergeNode in="SourceGraphic"/>
                                 </feMerge>
                             </filter>
                         </defs>
-                        <!-- Complex Brain/Network (teacher) -->
-                        <path d="M40 80 C 20 100, 20 140, 40 160" stroke="#64748b" stroke-width="5" fill="none"/>
-                        <path d="M80 50 C 60 70, 60 110, 80 130" stroke="#64748b" stroke-width="5" fill="none"/>
-                        <path d="M60 40 C 40 60, 40 100, 60 120" stroke="#64748b" stroke-width="5" fill="none"/>
-                        <circle cx="50" cy="50" r="10" fill="#64748b" fill-opacity="0.5"/>
-                        <circle cx="30" cy="90" r="8" fill="#64748b" fill-opacity="0.5"/>
-                        <circle cx="70" cy="140" r="12" fill="#64748b" fill-opacity="0.5"/>
+                        <!-- Bolder Brain/Network (teacher) -->
+                        <path d="M40 80 C 20 100, 20 140, 40 160" stroke="#64748b" stroke-width="8" fill="none"/>
+                        <path d="M80 50 C 60 70, 60 110, 80 130" stroke="#64748b" stroke-width="8" fill="none"/>
+                        <path d="M60 40 C 40 60, 40 100, 60 120" stroke="#64748b" stroke-width="8" fill="none"/>
+                        <circle cx="50" cy="50" r="12" fill="#64748b" fill-opacity="0.7"/>
+                        <circle cx="30" cy="90" r="10" fill="#64748b" fill-opacity="0.7"/>
+                        <circle cx="70" cy="140" r="14" fill="#64748b" fill-opacity="0.7"/>
 
-                        <!-- Transfer Arrows -->
-                        <path d="M90 80 L120 80" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8">
-                            <animate attributeName="stroke-dashoffset" values="16;0" dur="1s" repeatCount="indefinite"/>
-                        </path>
-                        <path d="M95 120 L125 120" stroke="#06b6d4" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 8">
-                             <animate attributeName="stroke-dashoffset" values="16;0" dur="1s" begin="-0.5s" repeatCount="indefinite"/>
+                        <!-- Solid, glowing Transfer Arrow -->
+                        <path d="M90 100 L125 100 M110 85 L125 100 L110 115" stroke="#06b6d4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                            <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" />
                         </path>
 
-                        <!-- Simple Chip (student) -->
-                        <g filter="url(#chip-glow)">
-                            <rect x="135" y="85" width="40" height="40" rx="5" fill="#06b6d4"/>
-                        </g>
+                        <!-- Prominent Chip (student) -->
+                        <rect x="135" y="75" width="50" height="50" rx="8" fill="#06b6d4" filter="url(#prominent-glow)"/>
                     </svg>
                     <span class="text-2xl font-bold text-white">ML<span class="text-cyan-400">Distill</span>.com</span>
                 </a>

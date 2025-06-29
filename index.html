@@ -236,8 +236,8 @@
                     <p class="text-gray-300 mt-4 max-w-2xl mx-auto">Our team of experts can help with your model distillation needs, from consultation and strategy to implementing bespoke student models for your specific use case. Reach out to see how we can help.</p>
                 </div>
                 <div class="max-w-xl mx-auto">
-                    <!-- Netlify form handling enabled with robust attributes -->
-                    <form name="contact" method="POST" data-netlify="true" action="/?success=true#contact" class="bg-gray-900 p-8 rounded-lg shadow-lg">
+                    <!-- Netlify form handling with standard action -->
+                    <form name="contact" method="POST" data-netlify="true" action="/" class="bg-gray-900 p-8 rounded-lg shadow-lg">
                         <input type="hidden" name="form-name" value="contact" />
                         <div class="mb-6">
                             <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name</label>
@@ -257,7 +257,6 @@
                             </button>
                         </div>
                     </form>
-                    <div id="form-status" class="text-center mt-4"></div>
                 </div>
             </div>
         </section>
@@ -298,14 +297,6 @@
                 });
             });
         });
-
-        // Handle form success message
-        const formStatus = document.getElementById('form-status');
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('success')) {
-            formStatus.textContent = "Thank you for your message! We will get back to you shortly.";
-            formStatus.className = 'text-green-400 mt-4';
-        }
     </script>
 </body>
 </html>
